@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Panel de control</h1>
+    {% if 'user_id' in session %}
+        <p>Bienvenido al panel de control, usuario {{ session['user_id'] }}.</p>
+        <!-- Aquí puedes agregar contenido específico para usuarios autenticados -->
+    {% else %}
+        <p>Debes iniciar sesión para acceder a esta página.</p>
+    {% endif %}
+</body>
+</html>
