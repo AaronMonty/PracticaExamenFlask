@@ -1,39 +1,45 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de inicio</title>
-    
-    <!-- Agregamos los estilos de Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <!-- Enlace al archivo de estilos personalizados -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Mi Sitio Web</a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="login">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Registrarme</a>
-            </li>
-        </ul>
-    </div>
+<!doctype html>
+<html lang="en">
 
-    <div class="container mt-4">
-        <div class="jumbotron">
-            <h1 class="display-4">Página de inicio</h1>
-            <p class="lead">¡Bienvenido a la página de inicio!</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Página principal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/styles.css">
+
+</head>
+
+<body>
+
+    <div class="container index-container">
+        <h1 class="index-title">Bienvenido a nuestra página</h1>
+        <p class="index-subtitle">Esta es la página principal de nuestro sitio web. Por favor, inicia sesión o regístrate para continuar.</p>
+        <div class="index-buttons">
+            <button type="button" class="btn btn-primary btn-lg index-button" onclick="location.href='{{ url_for('login') }}';">
+                Iniciar sesión
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg index-button" onclick="location.href='{{ url_for('register') }}';">
+                Registrarse
+            </button>
         </div>
     </div>
 
-    <footer class="footer text-center mt-4">
-        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- I've included the compiled Bootstrap core and jQuery libraries. -->
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
 </body>
 </html>

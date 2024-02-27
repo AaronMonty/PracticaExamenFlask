@@ -12,39 +12,19 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.index-container {
+.dashboard-container {
     max-width: 800px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
 
-.index-title {
+.dashboard-title {
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.index-subtitle {
+.dashboard-subtitle {
     font-size: 1.5rem;
     margin-bottom: 30px;
-}
-
-.index-button {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 50px;
-    transition: all 0.2s ease-in-out;
-}
-.index-button {
-    margin-right: 10px;
-}
-
-.index-button:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.index-button:focus {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
