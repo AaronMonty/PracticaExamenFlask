@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/dashboard.css">
 </head>
 <body>
-    <h1>Panel de control</h1>
-    {% if 'user_id' in session %}
-        <p>Bienvenido al panel de control, usuario {{ session['user_id'] }}.</p>
-        <!-- Aquí puedes agregar contenido específico para usuarios autenticados -->
-    {% else %}
-        <p>Debes iniciar sesión para acceder a esta página.</p>
-    {% endif %}
+    <div class="flex-container">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bienvenido, gracias por iniciar sesión</h3>
+            </div>
+
+            <div class="nav-items">
+                <div class="nav-item active">
+                    <a href="{{ url_for('about') }}">Sobre Mi</a>
+                </div>
+                {% if 'user_id' in session %}
+                    <div class="nav-item">
+                        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{ url_for('formulario') }}">Formulario
+                {% else %}
+                    <div class="nav-item">
+                        <a href="{{ url_for('login') }}">Iniciar sesión</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{ url_for('register') }}">Registrarse</a>
+                    </div>
+                {% endif %}
+            </div>
+        </nav>
+
+        <!-- Dashboard -->
+        <div class="dashboard-container">
+            <h1 class="dashboard-title">Dashboard</h1>
+            <h2 class="dashboard-subtitle">Bienvenido a nuestro sitio web</h2>
+            <p>Aquí encontrarás información sobre nosotros y las opciones de inicio de sesión.</p>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Fútbol</title>
+    <!-- Puedes incluir estilos específicos para tu formulario aquí -->
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+    <h1>Formulario de Fútbol</h1>
+    <form method="POST" action="{{ url_for('formulario') }}">
+        <label for="equipo_favorito">Equipo Favorito:</label>
+        <input type="text" id="equipo_favorito" name="equipo_favorito" required>
+
+        <label for="jugador_favorito">Jugador Favorito:</label>
+        <input type="text" id="jugador_favorito" name="jugador_favorito" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

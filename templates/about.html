@@ -1,3 +1,4 @@
+<!-- En tu plantilla about.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,5 +9,57 @@
 <body>
     <h1>Sobre mí</h1>
     <p>Esta es la página "Sobre mí". Aquí puedes agregar información sobre ti y tu trabajo.</p>
+
+    <h2>Mis Ejercicios:</h2>
+    <ul>
+        {% for exercise in exercises %}
+            <li>
+                <h3>{{ exercise.titulo }}</h3>
+                <p>{{ exercise.descripcion }}</p>
+                <pre>
+                    <code>
+                        {% if exercise.titulo == 'Ejercicio 1' %}
+                            {{ "nombre = input(\"Ingresa tu nombre: \")\n" }}
+                            {{ "edad = int(input(\"Ingresa tu edad: \"))\n" }}
+                            {{ "año_actual = 2023\n" }}
+                            {{ "año_cumplir_100 = año_actual + (100 - edad)\n" }}
+                            {{ "print(f\"¡Hola {nombre}! Cumplirás 100 años en el año {año_cumplir_100}.\")\n" }}
+                        {% elif exercise.titulo == 'Ejercicio 2' %}
+                            {{ "numero = int(input(\"Ingresa un número: \"))\n" }}
+                            {{ "if numero % 2 == 0:\n" }}
+                            {{ "    print(\"El número es par.\")\n" }}
+                            {{ "else:\n" }}
+                            {{ "    print(\"El número es impar.\")\n" }}
+                        {% elif exercise.titulo == 'Ejercicio 3' %}
+                            {{ "numeros = [2, 6, 8, 3, 1, 10, 7, 4, 9, 5]\n" }}
+                            {{ "for num in numeros:\n" }}
+                            {{ "    if num > 5:\n" }}
+                            {{ "        print(num)\n" }}
+                        {% elif exercise.titulo == 'Ejercicio 4' %}
+                            {{ "lista1 = [1, 2, 3, 4, 5]\n" }}
+                            {{ "lista2 = [3, 4, 5, 6, 7, 8]\n" }}
+                            {{ "for num in lista1:\n" }}
+                            {{ "    if num in lista2:\n" }}
+                            {{ "        print(num)\n" }}
+                        {% elif exercise.titulo == 'Ejercicio 5' %}
+                            {{ "años_nacimiento = [1990, 1985, 2000, 1998, 2005]\n" }}
+                            {{ "año_actual = 2023\n" }}
+                            {{ "edades = [año_actual - año for año in años_nacimiento]\n" }}
+                            {{ "print(\"Edades de los alumnos:\")\n" }}
+                            {{ "print(edades)\n" }}
+                        {% elif exercise.titulo == 'Ejercicio 6' %}
+                            {{ "texto = input(\"Ingresa un texto: \")\n" }}
+                            {{ "texto = texto.lower()\n" }}
+                            {{ "texto_sin_espacios = texto.replace(\" \", \"\")\n" }}
+                            {{ "if texto_sin_espacios == texto_sin_espacios[::-1]:\n" }}
+                            {{ "    print(\"El texto es un palíndromo.\")\n" }}
+                            {{ "else:\n" }}
+                            {{ "    print(\"El texto no es un palíndromo.\")\n" }}
+                        {% endif %}
+                    </code>
+                </pre>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

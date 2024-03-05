@@ -1,34 +1,33 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Página principal</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../static/styles.css">
-
 </head>
-
 <body>
-
     <div class="container index-container">
-        <h1 class="index-title">Bienvenido a nuestra página</h1>
-        <p class="index-subtitle">Esta es la página principal de nuestro sitio web. Por favor, inicia sesión o regístrate para continuar.</p>
-        <div class="index-buttons">
-            <button type="button" class="btn btn-primary btn-lg index-button" onclick="location.href='{{ url_for('login') }}';">
-                Iniciar sesión
-            </button>
-            <button type="button" class="btn btn-secondary btn-lg index-button" onclick="location.href='{{ url_for('register') }}';">
-                Registrarse
-            </button>
-        </div>
+        <h1 class="index-title">Registrate</h1>
+        <p class="index-subtitle">Por favor, registrate para poder continuar.</p>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form method="post" action="/register" class="index-form">
+            <div class="mb-3">
+                <label for="username" class="form-label">Usuario:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg index-button">Registrarse</button>
+        </form>
     </div>
 
     <!-- Bootstrap core JavaScript
