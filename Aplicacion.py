@@ -102,6 +102,16 @@ def formulario():
     # Si es una solicitud GET, simplemente renderiza el formulario
     return render_template('formulario.html')
 
+@app.route("/hello/<name>")
+def hello(name=None):
+    return render_template('hello.html', name=name)
+
+@app.route('/edad/<nombre>/<int:edad>')
+def calcular_edad(nombre=None, edad=None):
+    actual = 2024  # Asumiendo que estamos en el año 2023
+    cumplir100 = actual + (100 - edad)
+    return render_template('calcularedad.html', nombre=nombre, cumplir100=cumplir100)
+
 # Ejecutar la aplicación
 if __name__ == '__main__':
     app.run(debug=True)

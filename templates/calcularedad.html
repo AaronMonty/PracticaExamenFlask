@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <title>Hello from Flask</title>
+</head>
+<body>
+    {% if nombre %}
+        <h1>Hola {{ nombre }} cumpliras 100 años en {{cumplir100}}</h1>
+    
+    {% endif %}
+</body>
+</html>
