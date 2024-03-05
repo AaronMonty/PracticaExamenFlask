@@ -32,10 +32,7 @@ def index():
 def about():
     return render_template('ejercicios.html')
 =======
-@app.route('/about_me')
-def about_me():
-    return render_template('about.html')
->>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
