@@ -12,15 +12,30 @@ db = mysql.connector.connect(
     database="mydatabase"
 )
 
+<<<<<<< HEAD
+=======
+def register_user(username, password):
+    query = "INSERT INTO alumnos (nombre, password) VALUES (%s, %s)"
+    cursor = db.cursor()
+    cursor.execute(query, (username, password))
+    db.commit()
+    cursor.close()
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
 
 # Rutas públicas
 @app.route('/')
 def index():
     return render_template('index.html')
 
+<<<<<<< HEAD
 @app.route('/about')
 def about():
     return render_template('ejercicios.html')
+=======
+@app.route('/about_me')
+def about_me():
+    return render_template('about.html')
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -35,6 +50,7 @@ def register():
         user = cursor.fetchone()
 
         if user:
+<<<<<<< HEAD
             cursor.close()
             return render_template('register.html', error='El usuario ya existe')
         else:
@@ -44,6 +60,11 @@ def register():
             db.commit()
             cursor.close()
 
+=======
+            return render_template('register.html', error='El usuario ya existe')
+        else:
+            register_user(username, password)
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
             return redirect(url_for('login'))
 
     return render_template('register.html')
@@ -56,7 +77,11 @@ def login():
         password = request.form['password']
 
         # Verificar las credenciales en la base de datos
+<<<<<<< HEAD
         query = "SELECT * FROM alumnos WHERE nombre = %s AND contraseña = %s"
+=======
+        query = "SELECT * FROM alumnos WHERE nombre = %s AND password = %s"
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
         cursor = db.cursor()  # Crear un nuevo cursor
         cursor.execute(query, (username, password))
         user = cursor.fetchone()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-image: url('https://source.unsplash.com/random/1600x900/?nature,water,landscape');
     background-size: cover;
@@ -12,6 +13,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
+=======
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
 .login-container {
     max-width: 400px;
     margin: 0 auto;

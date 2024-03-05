@@ -16,14 +16,21 @@
 
             <div class="nav-items">
                 <div class="nav-item active">
+<<<<<<< HEAD
                     <a href="{{ url_for('about') }}">Sobre Mi</a>
+=======
+                    <a href="#">Sobre Nosotros</a>
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
                 </div>
                 {% if 'user_id' in session %}
                     <div class="nav-item">
                         <a href="{{ url_for('logout') }}">Cerrar sesión</a>
                     </div>
+<<<<<<< HEAD
                     <div class="nav-item">
                         <a href="{{ url_for('formulario') }}">Formulario
+=======
+>>>>>>> e32049ce67efb83a7095064b20fa44dbfcc1771c
                 {% else %}
                     <div class="nav-item">
                         <a href="{{ url_for('login') }}">Iniciar sesión</a>
